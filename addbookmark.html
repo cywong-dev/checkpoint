@@ -1,75 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bookmark Sharing App</title>
-  <link
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark Sharing App</title>
+    <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     />
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script type="module" src="./app.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Bookmark</h1>
+      <nav>
+        <a href="index.html" id="nav-list-link">Back to Home</a>
+      </nav>
+    </header>
 
-</head>
-<body>
-  <header>
-    <h1>Bookmark</h1>
-    <nav>
-      <a href="index.html" id="nav-list-link">Back to Home</a>
-    </nav>
-  </header>
+    <main>
+      <section>
+        <h2>Add a new bookmark</h2>
 
-  <main>
+        <div id="addBookmark">
+          <form id="bookmark-form">
+            <div class="form-group">
+              <label for="bookmark-url">URL:</label>
+              <input
+                type="url"
+                class="form-control"
+                id="bookmark-url"
+                required
+                placeholder="https://example.com"
+              />
+              <label for="bookmark-title">Title:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="bookmark-title"
+                required
+                placeholder="Article Title"
+              />
+              <label for="bookmark-description">Description:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="bookmark-description"
+                required
+                placeholder="Brief description"
+              />
+              <button class="btn btn-dark" type="submit">Submit</button>
+              <input type="submit" hidden />
+            </div>
+          </form>
+        </div>
+      </section>
 
-    <section>
-    <H2>
-      Add a new bookmark
-    </H2>
+      <section>
+        <h2>Bookmarks</h2>
+        <table class="table" id="display">
+          <thead class="table-dark text-white">
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">TimeStamp</th>
+              <th scope="col">Copy</th>
+              <th scope="col">Like</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
 
-    <div id="addBookmark">
-      <form id="bookmark-form">
-        <div class="form-group">
-          <label for="bookmark-url">URL:</label>
-          <input type="url" class="form-control" id="bookmark-url" required placeholder="https://example.com">
-          <label for="bookmark-title">Title:</label>
-          <input type="text" class="form-control" id="bookmark-title" required placeholder="Article Title">
-          <label for="bookmark-description">Description:</label>
-          <input type="text" class="form-control" id="bookmark-description" required placeholder="Brief description">
-          <button class="btn btn-dark" font-weight-bold" type="submit">Submit</button>
-        <input type="submit" hidden />
-       </div>
-      </form>
-    </div>
-    </section>
-
-    <section>
-      <h2>Bookmarks</h2>
-    <table class="table" id="display">
-  <thead class="table-dark text-white">
-   <tr>
-    <th scope="col">URL</th>
-    <th scope="col">Title</th>
-    <th scope="col">Description</th>
-    <th scope="col">TimeStamp</th>
-    <th scope="col">Copy</th>
-    <th scope="col">Like</th>
-   </tr>
-  </thead>
-      <tbody id="tableBody">
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div id="bookmarks-container"></div>
-    </section>
-  </main>
-</body>
+        <div id="bookmarks-container"></div>
+      </section>
+    </main>
+  </body>
 </html>
